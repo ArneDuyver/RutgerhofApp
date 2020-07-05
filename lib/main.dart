@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_own_soundboard/screens/library/library_screen.dart';
 
 import './screens/home_screen/home_screen.dart';
 import './screens/info_screen/info_screen.dart';
@@ -13,11 +14,13 @@ class MyApp extends StatelessWidget {
     lang: Strings.nederlands,
   );
 
-  var routes = <String, WidgetBuilder>{
+  final routes = <String, WidgetBuilder>{
     InfoScreen.routeName: (BuildContext context) =>
         new InfoScreen(title: strings.infoScreenTitle),
     MyHomePage.routeName: (BuildContext context) =>
         new MyHomePage(title: strings.homeScreenTitle),
+    LibraryScreen.routeName: (BuildContext context) =>
+        new LibraryScreen(title: strings.libraryScreenTitle),
   };
 
   @override

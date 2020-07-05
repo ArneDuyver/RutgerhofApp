@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_own_soundboard/screens/home_screen/home_screen.dart';
+import 'package:my_own_soundboard/screens/widgets/menu.dart';
 
 class InfoScreen extends StatefulWidget {
   static const String routeName = "/InfoScreen";
@@ -16,7 +17,6 @@ class InfoScreenState extends State<InfoScreen> {
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
-      //TODO: add menu
       appBar: new AppBar(
         title: new Text(widget.title),
         actions: <Widget>[
@@ -26,6 +26,7 @@ class InfoScreenState extends State<InfoScreen> {
               Navigator.pushReplacementNamed(context, MyHomePage.routeName);
             },
           ),
+          Menu(),
         ],
       ),
       body: new Container(),

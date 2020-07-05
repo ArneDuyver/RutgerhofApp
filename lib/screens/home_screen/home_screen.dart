@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:my_own_soundboard/screens/info_screen/info_screen.dart';
+
+import 'package:my_own_soundboard/screens/home_screen/sound_page.dart';
 import 'package:my_own_soundboard/screens/widgets/menu.dart';
+import 'package:my_own_soundboard/models/model.dart';
 
 class MyHomePage extends StatefulWidget {
   static const String routeName = "/MyHomePage";
@@ -16,27 +18,17 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
+    final Model _model = Model.getExampleInstance();
+
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
         actions: <Widget>[
-          IconButton(
-            icon: Icon(Icons.info),
-            onPressed: () {
-              Navigator.pushReplacementNamed(context, InfoScreen.routeName);
-            },
-          ),
           Menu(),
         ],
       ),
-      //TODO: make it pretty
-      body: Column(
-        children: <Widget>[
-          Center(
-            child: Text("This is the home screen"),
-          ),
-        ],
-      ),
+      //TODO: wrap in PageView(index) and add pages automatically
+      body: SoundPage(_model.pages[0]),
     );
   }
 }

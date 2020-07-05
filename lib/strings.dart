@@ -4,25 +4,36 @@ class Strings {
 
   static Strings _instance;
 
-  String appTitle, homeScreenTitle, infoScreenTitle, menuSettings, menuInfo;
+  String appTitle,
+      homeScreenTitle,
+      infoScreenTitle,
+      menuSettings,
+      menuInfo,
+      libraryScreenTitle,
+      menuLibrary;
   List<String> menuItems;
 
   Strings._language(String lang) {
     appTitle = "My Own Soundboard";
     infoScreenTitle = "Info";
-    menuInfo = "info";
+    menuInfo = "Info";
 
     if (lang == nederlands) {
       homeScreenTitle = "Hoofdscherm";
       menuSettings = "Instellingen";
+      libraryScreenTitle = "Bibliotheek";
     } else {
       homeScreenTitle = "Homescreen";
       menuSettings = "Settings";
+      libraryScreenTitle = "Bibliotheek";
     }
+
+    menuLibrary = libraryScreenTitle;
 
     menuItems = <String>[
       menuSettings,
       menuInfo,
+      menuLibrary,
     ];
   }
 

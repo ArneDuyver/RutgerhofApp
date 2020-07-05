@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 
 import 'package:my_own_soundboard/screens/info_screen/info_screen.dart';
+import 'package:my_own_soundboard/screens/library/library_screen.dart';
 import 'package:my_own_soundboard/strings.dart';
 
 class Menu extends StatelessWidget {
-  Strings strings = Strings.getInstance(lang: "nl");
+  final Strings strings = Strings.getInstance(lang: "nl");
   BuildContext context;
 
   @override
@@ -29,6 +30,8 @@ class Menu extends StatelessWidget {
       print("u pressed settings");
     } else if (item == strings.menuInfo) {
       Navigator.pushReplacementNamed(context, InfoScreen.routeName);
+    } else if (item == strings.menuLibrary) {
+      Navigator.pushReplacementNamed(context, LibraryScreen.routeName);
     }
   }
 }
