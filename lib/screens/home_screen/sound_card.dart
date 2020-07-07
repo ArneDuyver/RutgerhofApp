@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:my_own_soundboard/models/sound_item.dart';
+import 'package:my_own_soundboard/screens/widgets/media_button.dart';
 
 class SoundCard extends StatefulWidget {
-  SoundItem _sound;
+  final SoundItem _sound;
 
   SoundCard(this._sound, {Key key}) : super(key: key);
 
@@ -11,6 +12,7 @@ class SoundCard extends StatefulWidget {
 }
 
 class _SoundCardState extends State<SoundCard> {
+  static const double splashSize = 35;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -19,6 +21,7 @@ class _SoundCardState extends State<SoundCard> {
       child: Card(
         color: Colors.lightBlue,
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
             Container(
               child: Text(
@@ -36,16 +39,8 @@ class _SoundCardState extends State<SoundCard> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: <Widget>[
-                  IconButton(
-                    icon: Icon(Icons.play_arrow),
-                    //TODO:
-                    onPressed: () {},
-                  ),
-                  IconButton(
-                    icon: Icon(Icons.stop),
-                    //TODO:
-                    onPressed: () {},
-                  ),
+                  MediaButton(Icons.play_arrow, () {}, splashSize),
+                  MediaButton(Icons.stop, () {}, splashSize),
                 ],
               ),
             ),

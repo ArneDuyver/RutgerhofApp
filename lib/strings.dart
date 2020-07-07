@@ -10,22 +10,26 @@ class Strings {
       menuSettings,
       menuInfo,
       libraryScreenTitle,
-      menuLibrary;
+      menuLibrary,
+      addSoundfileScreenTitle;
   List<String> menuItems;
 
   Strings._language(String lang) {
+    print(lang);
     appTitle = "My Own Soundboard";
     infoScreenTitle = "Info";
     menuInfo = "Info";
 
-    if (lang == nederlands) {
+    if (lang == Strings.nederlands) {
       homeScreenTitle = "Hoofdscherm";
       menuSettings = "Instellingen";
       libraryScreenTitle = "Bibliotheek";
+      addSoundfileScreenTitle = "Voeg een geluid toe";
     } else {
       homeScreenTitle = "Homescreen";
       menuSettings = "Settings";
       libraryScreenTitle = "Bibliotheek";
+      addSoundfileScreenTitle = "Add a sound";
     }
 
     menuLibrary = libraryScreenTitle;
@@ -40,9 +44,9 @@ class Strings {
   static Strings getInstance({String lang}) {
     if (_instance == null) {
       if (lang == null) {
-        _instance = Strings._language(lang);
-      } else {
         _instance = Strings._language("en");
+      } else {
+        _instance = Strings._language(lang);
       }
     }
     return _instance;

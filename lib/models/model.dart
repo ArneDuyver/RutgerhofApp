@@ -48,11 +48,19 @@ class Model {
     example.createNewPage("Page 2");
     example.addSoundToPage(1, example.library[2]);
     example.addSoundToPage(1, example.library[3]);
-    return example;
+
+    if (_instance == null) {
+      _instance = example;
+    }
+    return _instance;
   }
 
   void addSoundToLibrary(SoundItem soundItem) {
     library.add(soundItem);
+  }
+
+  void removeSoundFromLibrary(index) {
+    library.removeAt(index);
   }
 
   void createNewPage(String title) {

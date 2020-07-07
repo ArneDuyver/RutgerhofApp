@@ -18,7 +18,7 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
-    final Model _model = Model.getExampleInstance();
+    Model _model = Model.getExampleInstance();
 
     return Scaffold(
       appBar: AppBar(

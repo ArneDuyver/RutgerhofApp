@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:my_own_soundboard/models/model.dart';
-import 'package:my_own_soundboard/models/sound_item.dart';
 import 'package:my_own_soundboard/screens/home_screen/sound_card.dart';
+import 'package:my_own_soundboard/screens/widgets/media_button.dart';
 
 class SoundPage extends StatefulWidget {
   final _page;
@@ -34,11 +34,7 @@ class _SoundPageState extends State<SoundPage> {
                   ),
                 ),
               ),
-              IconButton(
-                icon: Icon(Icons.edit),
-                //TODO:
-                onPressed: () {},
-              )
+              MediaButton(Icons.edit, () {}, 45),
             ],
           ),
         ),

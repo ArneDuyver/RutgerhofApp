@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_own_soundboard/screens/home_screen/home_screen.dart';
+import 'package:my_own_soundboard/screens/widgets/media_button_appbar.dart';
 import 'package:my_own_soundboard/screens/widgets/menu.dart';
 
 class InfoScreen extends StatefulWidget {
@@ -20,12 +21,9 @@ class InfoScreenState extends State<InfoScreen> {
       appBar: new AppBar(
         title: new Text(widget.title),
         actions: <Widget>[
-          IconButton(
-            icon: Icon(Icons.home),
-            onPressed: () {
-              Navigator.pushReplacementNamed(context, MyHomePage.routeName);
-            },
-          ),
+          MediaButtonAppBar(Icons.home, () {
+            Navigator.pushReplacementNamed(context, MyHomePage.routeName);
+          }),
           Menu(),
         ],
       ),

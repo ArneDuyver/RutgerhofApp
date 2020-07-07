@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:my_own_soundboard/screens/library/library_screen.dart';
+import 'package:my_own_soundboard/screens/add_soundfile_screen/add_soundfile_screen.dart';
+import 'package:my_own_soundboard/screens/library_screen/library_screen.dart';
 
 import './screens/home_screen/home_screen.dart';
 import './screens/info_screen/info_screen.dart';
@@ -21,6 +22,8 @@ class MyApp extends StatelessWidget {
         new MyHomePage(title: strings.homeScreenTitle),
     LibraryScreen.routeName: (BuildContext context) =>
         new LibraryScreen(title: strings.libraryScreenTitle),
+    AddSoundfileScreen.routeName: (BuildContext context) =>
+        new AddSoundfileScreen(title: strings.addSoundfileScreenTitle),
   };
 
   @override

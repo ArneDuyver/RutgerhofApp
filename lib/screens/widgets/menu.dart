@@ -1,19 +1,16 @@
 import 'package:flutter/material.dart';
 
 import 'package:my_own_soundboard/screens/info_screen/info_screen.dart';
-import 'package:my_own_soundboard/screens/library/library_screen.dart';
+import 'package:my_own_soundboard/screens/library_screen/library_screen.dart';
 import 'package:my_own_soundboard/strings.dart';
 
 class Menu extends StatelessWidget {
   final Strings strings = Strings.getInstance(lang: "nl");
-  BuildContext context;
-
   @override
   Widget build(BuildContext context) {
-    this.context = context;
     return PopupMenuButton(
       icon: Icon(Icons.more_vert),
-      onSelected: itemAction,
+      onSelected: (String item) => itemAction(item, context),
       itemBuilder: (BuildContext context) {
         return strings.menuItems.map((String item) {
           return PopupMenuItem<String>(
@@ -25,7 +22,7 @@ class Menu extends StatelessWidget {
     );
   }
 
-  void itemAction(String item) {
+  void itemAction(String item, BuildContext context) {
     if (item == strings.menuSettings) {
       print("u pressed settings");
     } else if (item == strings.menuInfo) {
